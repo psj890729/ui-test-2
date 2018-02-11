@@ -30,6 +30,13 @@ dependencies {
 	testCompile 'com.codeborne:selenide:4.10.01'
     
 	testCompile group: 'org.easytesting', name: 'fest-assert-core', version: '2.0M10'
+	
+	// https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
+	compile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '2.1.0'
+
+    
+    // https://mvnrepository.com/artifact/org.jenkins-ci.plugins/chromedriver
+	// compile group: 'org.jenkins-ci.plugins', name: 'chromedriver', version: '1.2'
 }
 
 
