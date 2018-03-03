@@ -7,7 +7,7 @@
  */
 
 // Apply the java-library plugin to add support for Java Library
-apply plugin: 'java-library'
+apply plugin: 'java'
 
 defaultTasks 'clean', 'test' 
 
@@ -36,6 +36,9 @@ dependencies {
 	// https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
 	compile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '2.1.0'
 
+    testCompile 'org.seleniumhq.selenium.grid:selenium-grid-hub:1.0.5'
+    testCompile 'org.seleniumhq.selenium.grid:selenium-grid-remote-control:1.0.5'
+    testCompile 'org.seleniumhq.selenium:selenium-server:3.9.1'
     
     // https://mvnrepository.com/artifact/org.jenkins-ci.plugins/chromedriver
 	// compile group: 'org.jenkins-ci.plugins', name: 'chromedriver', version: '1.2'
