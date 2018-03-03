@@ -28,8 +28,11 @@ dependencies {
     //implementation 'com.google.guava:guava:23.0'
 
     // Use JUnit test framework
-    testImplementation 'junit:junit:4.12'
-    
+    //testImplementation 'junit:junit:4.12'
+
+	testCompile 'junit:junit:4.12'
+	
+	    
     // selenide
 	testCompile 'com.codeborne:selenide:4.10.01'
     
