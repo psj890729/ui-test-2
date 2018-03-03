@@ -8,6 +8,8 @@
 
 // Apply the java-library plugin to add support for Java Library
 apply plugin: 'java'
+compileJava.options.encoding = 'UTF-8'
+
 
 defaultTasks 'clean', 'test' 
 
