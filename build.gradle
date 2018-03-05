@@ -78,3 +78,16 @@ task safari(type: Test) {
   systemProperties['selenide.browser'] = 'safari'
 }
 
+test {
+	
+	if(project.hasProperty("jenkins") == true ) {
+	
+		
+		def job_url = System.getenv("JOB_URL")
+		println "job url : " + job_url
+		def build_number = System.getenv("BUILD_NUMBER") 
+		System.Property("selenide.reportsUrl", job_url + build_number + "/artifact/")
+		
+	}
+}
+
