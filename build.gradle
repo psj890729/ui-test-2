@@ -1,6 +1,6 @@
 apply plugin: 'java'
-
-defaultTasks 'clean', 'test' 
+//apply plugin: 'groovy'
+defaultTasks 'clean', 'test'
 
 
 sourceSets {
@@ -84,13 +84,16 @@ test {
 	
 	
 	if(project.hasProperty("jenkins") == true ) {
-	
+
+		//systemProperty "execEnv", "jenkins"
+		//systemProperty "selenide.browser", "com.suji.test.ui.RemoteWebDriverProvider"
+		//println "selenide.browser : " + System.getProperty("selenide.browser")
 		
 		def job_url = System.getenv("JOB_URL") as String ?:""
 		println "job url : " + job_url
 		def build_number = System.getenv("BUILD_NUMBER") as String ?:""
-		//SystemProperty "selenide.reportUrl", job_url + build_number + "/artifact/"
-		System.setProperty("selenide.reportsUrl", job_url + build_number + "/artifact/")
+		systemProperty "selenide.reportUrl", job_url + build_number + "/artifact/"
+		println "selenide.reportUrl " + System.getProperty("selenide.reportsUrl")
 		
 	}
 }
