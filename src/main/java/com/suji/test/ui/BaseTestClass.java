@@ -1,30 +1,20 @@
 package com.suji.test.ui;
 
-import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.Rule;
 
-import com.codeborne.selenide.WebDriverRunner;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
+import com.codeborne.selenide.junit.ScreenShooter;
 
 public class BaseTestClass {
-		
-	private static WebDriver driver;
+			
+	@Rule
+	public ScreenShooter screenShooter = ScreenShooter.failedTests();
 	
 	@BeforeClass
 	public static void setupConfig() throws Exception {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-
-        WebDriverRunner.setWebDriver(driver);
-		//System.setProperty("selenide.browser", "chrome");
-		//System.setProperty("webdriver.chrome.driver", "chromedriver");
+		com.codeborne.selenide.Configuration.browser = "chrome";
+		
+		com.codeborne.selenide.Configuration.baseUrl = "https://www.google.co.kr";
 	}
 	
-	@AfterClass
-	public static void teardown() throws Exception {
-		driver.quit();
-	}
 }
