@@ -89,8 +89,8 @@ test {
 		def job_url = System.getenv("JOB_URL") as String ?:""
 		println "job url : " + job_url
 		def build_number = System.getenv("BUILD_NUMBER") as String ?:""
-		SystemProperty "selenide.reportUrl", job_url + build_number + "/artifact/"
-		//System.setProperty("selenide.reportsUrl", job_url + build_number + "/artifact/")
+		//SystemProperty "selenide.reportUrl", job_url + build_number + "/artifact/"
+		System.setProperty("selenide.reportsUrl", job_url + build_number + "/artifact/")
 		
 	}
 }
