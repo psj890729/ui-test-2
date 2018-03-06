@@ -89,7 +89,7 @@ test {
 		//systemProperty "selenide.browser", "com.suji.test.ui.RemoteWebDriverProvider"
 		//println "selenide.browser : " + System.getProperty("selenide.browser")
 		
-		def job_url = System.getenv("JOB_URL") as String ?:""
+		def job_url = System.getenv("BUILD_URL") as String ?:""
 		println "job url : " + job_url
 		def build_number = System.getenv("BUILD_NUMBER") as String ?:""
 		println "build number : " + build_number
