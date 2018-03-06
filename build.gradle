@@ -89,11 +89,9 @@ test {
 		//systemProperty "selenide.browser", "com.suji.test.ui.RemoteWebDriverProvider"
 		//println "selenide.browser : " + System.getProperty("selenide.browser")
 		
-		def job_url = System.getenv("JOB_URL")
-		println "job url : " + job_url
-		def build_number = System.getenv("BUILD_NUMBER")
-		println "build number : " + build_number
-		systemProperty "selenide.reportsUrl", job_url + build_number + "/artifact/"
+		def build_url = System.getenv("BUILD_URL")
+		println "build url : " + build_url
+		systemProperty "selenide.reportsUrl", build_url + "/artifact/"
 		println "selenide.reportsUrl " + System.getProperty("selenide.reportsUrl")
 		
 	}
