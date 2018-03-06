@@ -88,8 +88,8 @@ test {
 		//systemProperty "execEnv", "jenkins"
 		//systemProperty "selenide.browser", "com.suji.test.ui.RemoteWebDriverProvider"
 		//println "selenide.browser : " + System.getProperty("selenide.browser")
-		
-		systemProperty "selenide.reportsUrl", System.getenv("BUILD_URL") + "/artifact/"		
+		//systemProperty "selenide.reportsFolder", 
+		systemProperty "selenide.reportsUrl", System.getenv("BUILD_URL") + "artifact/"		
 	}
 }
 
