@@ -6,8 +6,8 @@ import static com.codeborne.selenide.Selenide.$;
 public class SearchPage {
 
 	public SearchResultPage search(String keyword) {
-		$("#lst-ib").should(visible).setValue(keyword);
-		$("#lst-ib").should(value(keyword)).pressEnter();
+		$("#tsf > div:nth-child(2) > div > div.RNNXgb > div > div.a4bIc > input").should(visible).setValue(keyword);
+		$("#tsf > div:nth-child(2) > div > div.RNNXgb > div > div.a4bIc > input").should(value(keyword)).pressEnter();
 		
 		return new SearchResultPage();
 	}
