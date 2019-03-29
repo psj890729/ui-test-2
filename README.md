@@ -1,5 +1,5 @@
 # Prerequisites
-- doeker
+- docker
 - gradle
 
 
